@@ -38,7 +38,7 @@ log_p_total = torch.log(p_total)
 
 rhs = torch.autograd.grad(log_p_total.sum(), x2, create_graph=False)[0]
 
-# 시각화
+# 시각화1
 x_np = x.detach().cpu().numpy()
 lhs_np = lhs.detach().cpu().numpy()
 rhs_np = rhs.detach().cpu().numpy()
@@ -50,14 +50,14 @@ plt.plot(x_np, lhs_np, label="∇log p1(x) + ∇log p2(x)")
 plt.plot(x_np, rhs_np, label="∇log(p1(x) + p2(x))", linestyle="dashed", color="orange")
 plt.plot(x_np, grad_logp1_np, label="∇log p1(x)", color = "red")
 plt.plot(x_np, grad_logp2_np, label="∇log p2(x)", color = "black")
-plt.title("Score Function Comparison")
+plt.title("Score Function Comparison 1")
 plt.xlabel("x")
 plt.ylabel("Score")
 plt.legend()
 plt.grid(True)
 plt.show()
 
-# 시각화
+# 시각화2
 x_np = x.detach().cpu().numpy()
 lhs_np = lhs.detach().cpu().numpy()
 rhs_np = rhs.detach().cpu().numpy()
@@ -69,14 +69,14 @@ plt.plot(x_np, lhs_np, label="∇log p1(x) + ∇log p2(x)", linestyle="dashed")
 #plt.plot(x_np, rhs_np, label="∇log(p1(x) + p2(x))", linestyle="dashed", color = "orange")
 plt.plot(x_np, grad_logp1_np, label="∇log p1(x)", color = "red")
 plt.plot(x_np, grad_logp2_np, label="∇log p2(x)", color = "black")
-plt.title("Score Function Comparison")
+plt.title("Score Function Comparison 2")
 plt.xlabel("x")
 plt.ylabel("Score")
 plt.legend()
 plt.grid(True)
 plt.show()
 
-# 시각화
+# 시각화3
 x_np = x.detach().cpu().numpy()
 lhs_np = lhs.detach().cpu().numpy()
 rhs_np = rhs.detach().cpu().numpy()
@@ -88,7 +88,7 @@ plt.figure(figsize=(10, 5))
 plt.plot(x_np, rhs_np, label="∇log(p1(x) + p2(x))", linestyle="dashed", color = "orange")
 plt.plot(x_np, grad_logp1_np, label="∇log p1(x)", color = "red")
 plt.plot(x_np, grad_logp2_np, label="∇log p2(x)", color = "black")
-plt.title("Score Function Comparison")
+plt.title("Score Function Comparison 3")
 plt.xlabel("x")
 plt.ylabel("Score")
 plt.legend()
